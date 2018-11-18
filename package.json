@@ -1,0 +1,22 @@
+{
+  "name": "funnykid.club.api",
+  "version": "1.0.0",
+  "description": "api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kpuzyr/funnykid.club.api.git"
+  },
+  "author": "Nikolay Puzyr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kpuzyr/funnykid.club.api/issues"
+  },
+  "homepage": "https://github.com/kpuzyr/funnykid.club.api#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
