@@ -1,8 +1,24 @@
 const express = require('express');
-const app = express();
+const bunyan = require('bunyan');
+const bodyParser = require('body-parser');
+require('./config/config');
+const RequestController = require('./controllers/RequestController');
 
-app.get('/', function(req, res){
-    res.send('hello world');
+const log = bunyan.createLogger({ name: 'funnykid' });
+const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.get('/', (req, res) => {
+    res.send('App is working');
 });
 
-app.listen(3000);
+loadControllers();
+
+app.listen(3000, () => {
+    log.info('App is running on 3000 port');
+});
+
+function loadControllers() {
+    RequestController(app);
+}

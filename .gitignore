@@ -1,3 +1,8 @@
-.idea/*
+.idea
+.DS_Store
 node_modules
-package-lock.json
+lib
+.env
+db_data
+tmp/*.log*
+docker-compose.yml
