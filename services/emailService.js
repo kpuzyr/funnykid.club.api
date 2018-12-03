@@ -18,9 +18,12 @@ function sendEmail(data) {
     if (phone || from) {
         const mailOptions = {
             from,
-            to: Config.mail.mainEmail,
+            replyTy: from,
+            to: Config.mail.mainRecipient,
+            bcc: Config.mail.recipients.split(','),
             subject: `Заказ Игрушек: ${name}`,
-            text: details
+            html: `<p>E-mail покупателя: <b><a href="mailto:${from}?subject=Funny Kid Club заказ">${from}</a></b></p>
+                   <p>Детали: ${details}</p>`
         };
 
         promise = transporter.sendMail(mailOptions, (error, info) => {

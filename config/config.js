@@ -8,6 +8,8 @@ global.Config = {
     },
     mail: {
         mainEmail: process.env.MAIN_EMAIL,
-        mainPass: process.env.MAIN_PASS
+        mainPass: process.env.MAIN_PASS,
+        mainRecipient: process.env.MAIN_RECIPIENT,
+        recipients: process.env.RECIPIENTS
     }
 };
