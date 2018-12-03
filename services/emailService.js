@@ -18,11 +18,12 @@ function sendEmail(data) {
     if (phone || from) {
         const mailOptions = {
             from,
-            replyTy: from,
+            replyTo: from,
             to: Config.mail.mainRecipient,
             bcc: Config.mail.recipients.split(','),
             subject: `Заказ Игрушек: ${name}`,
             html: `<p>E-mail покупателя: <b><a href="mailto:${from}?subject=Funny Kid Club заказ">${from}</a></b></p>
+                   <p>Номер телефона покупателя: <b>${phone}</b></p>
                    <p>Детали: ${details}</p>`
         };
 
