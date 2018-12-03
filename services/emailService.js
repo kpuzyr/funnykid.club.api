@@ -13,16 +13,16 @@ function sendEmail(data) {
     let promise = Promise.resolve();
     const name = data.name ? data.name : '';
     const phone = data.phone ? data.phone : '';
-    const from = data.from ? data.from : '';
+    const email = data.email ? data.email : '';
     const details = data.details ? data.details : '';
-    if (phone || from) {
+    if (phone || email) {
         const mailOptions = {
-            from,
-            replyTo: from,
+            from: email,
+            replyTo: email,
             to: Config.mail.mainRecipient,
             bcc: Config.mail.recipients.split(','),
             subject: `Заказ Игрушек: ${name}`,
-            html: `<p>E-mail покупателя: <b><a href="mailto:${from}?subject=Funny Kid Club заказ">${from}</a></b></p>
+            html: `<p>E-mail покупателя: <b><a href="mailto:${email}?subject=Funny Kid Club заказ">${email}</a></b></p>
                    <p>Номер телефона покупателя: <b>${phone}</b></p>
                    <p>Детали: ${details}</p>`
         };
